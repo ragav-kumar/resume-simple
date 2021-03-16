@@ -1,0 +1,4 @@
+node_modules
+*.env
+old resume content.txt
+content.json
