@@ -9,6 +9,15 @@ export const endpoints = {
 
 export type Endpoints = keyof typeof endpoints;
 
+export const routes = {
+	profile: "/",
+	competency: "/competencies",
+	education: "/education",
+	contact: "/contact",
+	history: "/experience",
+	pdf: "/pdf",
+} as const;
+
 /**
  * No parameters for the content request.
  * Only reason it's not pre-loaded is because of the fancy loading spinner

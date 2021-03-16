@@ -17,8 +17,11 @@ export const Competency = () => {
 		</ContentWrap>
 	);
 }
+// We want a hanging indent!
 const ItemWrap = styled.div`
-	margin: 5px 0;
+	margin: 1em;
+	padding-left: 2em;
+	text-indent: -2em;
 `;
 const Label = styled.span`
 	font-weight: bold;
