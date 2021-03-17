@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "https://ragavkumar.com/build/static/css/main.875059cf.chunk.css",
+    "main.js": "https://ragavkumar.com/build/static/js/main.27a23cae.chunk.js",
+    "main.js.map": "https://ragavkumar.com/build/static/js/main.27a23cae.chunk.js.map",
+    "runtime-main.js": "https://ragavkumar.com/build/static/js/runtime-main.74055805.js",
+    "runtime-main.js.map": "https://ragavkumar.com/build/static/js/runtime-main.74055805.js.map",
+    "static/js/2.a94f5858.chunk.js": "https://ragavkumar.com/build/static/js/2.a94f5858.chunk.js",
+    "static/js/2.a94f5858.chunk.js.map": "https://ragavkumar.com/build/static/js/2.a94f5858.chunk.js.map",
+    "static/js/3.4d005848.chunk.js": "https://ragavkumar.com/build/static/js/3.4d005848.chunk.js",
+    "static/js/3.4d005848.chunk.js.map": "https://ragavkumar.com/build/static/js/3.4d005848.chunk.js.map",
+    "index.html": "https://ragavkumar.com/build/index.html",
+    "static/css/main.875059cf.chunk.css.map": "https://ragavkumar.com/build/static/css/main.875059cf.chunk.css.map",
+    "static/js/2.a94f5858.chunk.js.LICENSE.txt": "https://ragavkumar.com/build/static/js/2.a94f5858.chunk.js.LICENSE.txt",
+    "static/media/ragav-pointing-bw.a7be65b7.png": "https://ragavkumar.com/build/static/media/ragav-pointing-bw.a7be65b7.png",
+    "static/media/ragav-reading-bw.eb9e83ce.png": "https://ragavkumar.com/build/static/media/ragav-reading-bw.eb9e83ce.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74055805.js",
+    "static/js/2.a94f5858.chunk.js",
+    "static/css/main.875059cf.chunk.css",
+    "static/js/main.27a23cae.chunk.js"
+  ]
+}
