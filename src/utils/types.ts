@@ -54,3 +54,11 @@ export interface Experience {
 	end: string|null;
 	dateOverride: string|null;
 }
+
+export interface ContactRequest {
+	name: string;
+	phone: string;
+	email: string;
+	message: string;
+}
+export type ContactResponse = boolean;

@@ -17,6 +17,7 @@ export const Competency = () => {
 		</ContentWrap>
 	);
 }
+
 // We want a hanging indent!
 const ItemWrap = styled.div`
 	margin: 1em;

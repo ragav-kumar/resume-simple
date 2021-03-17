@@ -28,6 +28,8 @@ export const Content = () => {
 }
 
 const mapContent = ( path: string ): JSX.Element => {
+
+	// noinspection FallThroughInSwitchStatementJS
 	switch ( path ) {
 		case routes.competency:
 			return <Competency/>;
@@ -42,9 +44,10 @@ const mapContent = ( path: string ): JSX.Element => {
 	}
 }
 const Wrap = styled.div`
+	grid-area: content;
 	height: 100%;
+	max-width: 1024px;
 	align-self: flex-start;
-	padding: 10vh 0;
 	overflow-y: auto;
 	margin: 0 1vw;
 `;

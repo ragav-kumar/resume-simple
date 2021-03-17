@@ -1,17 +1,17 @@
 import content from './content.json'
-import { ContentResponse, Endpoints } from "./types";
+import { Endpoints } from "./types";
 
 export const apiFetch = async <
 	Request extends unknown,
 	Response extends unknown
-	>( endpoint: Endpoints, _data?: Request ) => {
+	>( endpoint: Endpoints, _data?: Request ):Promise<Response> => {
 	switch (endpoint ) {
 		case "pdf":
 			return Promise.reject("Not Implemented");
 		case "contact":
-			return Promise.reject("Not Implemented");
+			return Promise.resolve(true as any as Response);
 		case "content":
-			return Promise.resolve(content as ContentResponse);
+			return Promise.resolve(content as any as Response);
 	}
 	return Promise.reject("");
 }

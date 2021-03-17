@@ -7,6 +7,7 @@ import { Content } from './components/Content';
 import { blankContext, DbContext, DbContextType } from "./utils/db";
 import { apiFetch } from "./utils/apiFetch.mock";
 import { ContentRequest, ContentResponse } from "./utils/types";
+import { Header } from "./components/Header";
 
 export const App = () => {
 	const [ appContent, setAppContent ] = useState<DbContextType>(blankContext);
@@ -51,6 +52,7 @@ export const App = () => {
 			<DbContext.Provider value={appContent}>
 				<GlobalStyle/>
 				<Wrap>
+					<Header/>
 					<Menu/>
 					<Content/>
 				</Wrap>
@@ -66,6 +68,7 @@ const GlobalStyle = createGlobalStyle`
 		background-color: #f5f5f5;
 		height: 100vh;
 	}
+
 	#root {
 		height: 100%;
 	}
@@ -82,17 +85,15 @@ const GlobalStyle = createGlobalStyle`
 
 const Wrap = styled.div`
 	display: grid;
-	grid-template-columns: minmax(25vw, 500px) 1fr 1024px 1fr;
-	grid-template-areas: "menu . content . ";
+	grid-template-columns: 1fr 3fr;
+	grid-template-rows: auto 5em 1fr;
+	grid-template-areas:
+			"header ."
+			"header content"
+			"menu content";
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	> :first-child {
-		grid-area: menu;
-	}
-	> :last-child {
-		grid-area: content;
-	}
 `;
 
 

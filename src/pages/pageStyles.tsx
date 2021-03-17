@@ -5,7 +5,6 @@ export const electricBlue = "#59bef6" as const;
 
 export const ContentWrap = styled.div`
 	font-size: 24px;
-	backdrop-filter: blur(2px);
 	overflow-y: auto;
 	margin-bottom: 20px;
 	margin-right: 20px;

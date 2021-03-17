@@ -29,17 +29,20 @@ const IconWrap = styled.div`
 	align-items: center;
 	font-size: 30px;
 	margin-top: 1em;
+	width: 80%;
 	justify-content: space-evenly;
 `;
 
 const Wrap = styled.div`
-	font-size: 1.1em;
+	grid-area: header;
+	font-size: 44px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	text-shadow: 2px 2px 2px #0000007F;
 	margin-bottom: 1em;
-	width: 100%;
+	max-width: 10em;
 `
 const textStyle = css`
 	text-align: center;

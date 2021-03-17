@@ -11,7 +11,6 @@ export const Menu = () => {
 	if (pathname === '/build') pathname = '/';
 	return (
 		<Wrap>
-			<Header/>
 			<MenuWrap>
 				{sections.map<JSX.Element>(( { menuLabel, path }, index ) => (
 					<MenuItem
@@ -27,8 +26,7 @@ export const Menu = () => {
 	);
 }
 const Wrap = styled.div`
-	display: grid;
-	grid-template-rows: auto 1fr 1fr;
+	grid-area: menu;
 	height: 100%;
 	align-items: center;
 	justify-items: center;
