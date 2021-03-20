@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://ragavkumar.com/build/static/css/main.875059cf.chunk.css",
-    "main.js": "https://ragavkumar.com/build/static/js/main.16f9edd9.chunk.js",
-    "main.js.map": "https://ragavkumar.com/build/static/js/main.16f9edd9.chunk.js.map",
+    "main.js": "https://ragavkumar.com/build/static/js/main.7e0f8f07.chunk.js",
+    "main.js.map": "https://ragavkumar.com/build/static/js/main.7e0f8f07.chunk.js.map",
     "runtime-main.js": "https://ragavkumar.com/build/static/js/runtime-main.74055805.js",
     "runtime-main.js.map": "https://ragavkumar.com/build/static/js/runtime-main.74055805.js.map",
     "static/js/2.f920e4a2.chunk.js": "https://ragavkumar.com/build/static/js/2.f920e4a2.chunk.js",
@@ -14,13 +14,12 @@
     "static/js/2.f920e4a2.chunk.js.LICENSE.txt": "https://ragavkumar.com/build/static/js/2.f920e4a2.chunk.js.LICENSE.txt",
     "static/media/accredited-accommodations.1d1f4719.png": "https://ragavkumar.com/build/static/media/accredited-accommodations.1d1f4719.png",
     "static/media/cityautobahn.c2c1dc84.png": "https://ragavkumar.com/build/static/media/cityautobahn.c2c1dc84.png",
-    "static/media/ragav-pointing-bw.a7be65b7.png": "https://ragavkumar.com/build/static/media/ragav-pointing-bw.a7be65b7.png",
-    "static/media/ragav-reading-bw.eb9e83ce.png": "https://ragavkumar.com/build/static/media/ragav-reading-bw.eb9e83ce.png"
+    "static/media/new-headshot.a28cef50.png": "https://ragavkumar.com/build/static/media/new-headshot.a28cef50.png"
   },
   "entrypoints": [
     "static/js/runtime-main.74055805.js",
     "static/js/2.f920e4a2.chunk.js",
     "static/css/main.875059cf.chunk.css",
-    "static/js/main.16f9edd9.chunk.js"
+    "static/js/main.7e0f8f07.chunk.js"
   ]
 }

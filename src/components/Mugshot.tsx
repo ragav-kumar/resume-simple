@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import pointPic from '../img/ragav-pointing-bw.png';
-import readPic from '../img/ragav-reading-bw.png';
+import pic from '../img/new-headshot.png';
 
 interface MugshotProps {
 	pose: "pointing"|"reading"
@@ -11,7 +10,7 @@ interface MugshotProps {
 export const Mugshot = ( {pose, width }: MugshotProps ) => {
 	return (
 		<Wrap width={width}>
-			<Head src={pose === 'reading' ? readPic : pointPic} alt="Picture of Ragav Kumar" title="Picture of Ragav Kumar" />
+			<Head src={pic} alt="Picture of Ragav Kumar" title="Picture of Ragav Kumar" />
 		</Wrap>
 	)
 };
