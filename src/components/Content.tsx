@@ -4,6 +4,7 @@ import { sections } from '../utils/db';
 import { Competency, Contact, Education, History, Profile } from "../pages";
 import styled from "styled-components";
 import { routes } from "../utils/types";
+import { Portfolio } from "../pages/Portfolio";
 
 export const Content = () => {
 	const menuList = sections.slice(1).map<string>(( { path } ) => path);
@@ -39,6 +40,8 @@ const mapContent = ( path: string ): JSX.Element => {
 			return <History/>;
 		case routes.contact:
 			return <Contact/>;
+		case routes.portfolio:
+			return <Portfolio/>;
 		default:
 			return <Profile/>;
 	}

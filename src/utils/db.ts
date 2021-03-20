@@ -32,7 +32,11 @@ export const sections: SectionData[] = [
 		menuLabel: "Experience",
 		header: "Employment History",
 		path: routes.history,
-	},
+	}, {
+	menuLabel: "Portfolio",
+		header: "Portfolio",
+		path: routes.portfolio,
+	}
 ];
 
 export type DbContextType = ContentResponse;
@@ -42,5 +46,9 @@ export const blankContext: DbContextType = {
 	competencies: [],
 	education: [],
 	experience: [],
+	portfolio: {
+		delivered: [],
+		sideProjects: [],
+	},
 }
 export const DbContext = createContext<DbContextType>(blankContext);

@@ -16,6 +16,7 @@ export const routes = {
 	contact: "/contact",
 	history: "/experience",
 	pdf: "/pdf",
+	portfolio: "/portfolio",
 } as const;
 
 /**
@@ -28,6 +29,10 @@ export interface ContentResponse {
 	competencies: Competency[];
 	education: Education[];
 	experience: Experience[];
+	portfolio: {
+		delivered: PortfolioItem[];
+		sideProjects: PortfolioItem[];
+	}
 }
 
 export interface CompetencyItem {
@@ -53,6 +58,13 @@ export interface Experience {
 	start: string;
 	end: string|null;
 	dateOverride: string|null;
+}
+export interface PortfolioItem {
+	title: string;
+	imgUrl: string;
+	// Some portfolio items might be missing a link
+	url: string|null;
+	description: string;
 }
 
 export interface ContactRequest {
