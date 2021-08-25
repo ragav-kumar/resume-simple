@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DbContext } from "../utils/db";
-import { ContentWrap, MinorHeading } from "./pageStyles";
+import { ContentWrap } from "./pageStyles";
 import { PortfolioItem } from "../utils/types";
 import styled from "styled-components";
 

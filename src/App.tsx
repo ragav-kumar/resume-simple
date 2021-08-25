@@ -16,24 +16,6 @@ export const App = () => {
 		document.body.style.backgroundColor = "#f5f5f5";
 	}, []);
 
-	// const [ mugshotWidth, setMugshotWidth ] = useState(100);
-	/*const [ cardBackSize, setCardBackSize ] = useState<CardSizeProps>({
-		width: 1600,
-		height: 900,
-		isPortrait: false,
-	});*/
-
-	// Controlling the size of the main card layout
-	/*const { ref: cardRef } = useDimensions<HTMLDivElement>({
-		onResize: ( { width, height } ) => {
-			setMugshotWidth(width * .2);
-			setCardBackSize({
-				width: clamp(300, width, 1600),
-				height: clamp(0, height, 900),
-				isPortrait: width < height,
-			});
-		},
-	});*/
 	// On first run, retrieve appContent data
 	useEffect(() => {
 		apiFetch<ContentRequest, ContentResponse>("content")
@@ -97,11 +79,11 @@ const Wrap = styled.div`
 `;
 
 
-const clamp = ( min: number, value: number, max: number ): number => {
+/*const clamp = ( min: number, value: number, max: number ): number => {
 	if ( value < min ) {
 		return min;
 	} else if ( value > max ) {
 		return max;
 	}
 	return value;
-}
+}*/

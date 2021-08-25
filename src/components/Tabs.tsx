@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { electricBlue } from "../pages/pageStyles";
 
 interface TabsProps {
 	tabs: {

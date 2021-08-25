@@ -29,8 +29,6 @@ export const Content = () => {
 }
 
 const mapContent = ( path: string ): JSX.Element => {
-
-	// noinspection FallThroughInSwitchStatementJS
 	switch ( path ) {
 		case routes.competency:
 			return <Competency/>;

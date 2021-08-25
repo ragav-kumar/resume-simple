@@ -1,8 +1,7 @@
 import { endpoints, Endpoints } from "./types";
-import * as process from "process";
 
-const clientId = process.env.CLIENT_ID || "";
-const apiUrl = process.env.API_URL || "http://localhost/";
+const clientId = process.env.REACT_APP_CLIENT_ID || "";
+const apiUrl = process.env.REACT_APP_API_URL || "http://localhost/";
 
 interface FetchResponseSuccess<T extends unknown> {
 	success: true;
@@ -28,8 +27,10 @@ export const apiFetch = async <
 
 		const response = await fetch(apiUrl + endpoints[endpoint], {
 			method: 'POST',
+			mode: 'no-cors',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
+				'Access-Control-Allow-Origin': '*',
 			},
 			body: body,
 		});

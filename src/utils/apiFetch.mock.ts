@@ -1,4 +1,3 @@
-import content from './content.json'
 import { ContentResponse, Endpoints } from "./types";
 import reciprocity from "../img/reciprocity.png";
 import cityautobahn from "../img/cityautobahn.png";
@@ -8,32 +7,41 @@ export const apiFetch = async <
 	Request extends unknown,
 	Response extends unknown
 	>( endpoint: Endpoints, _data?: Request ):Promise<Response> => {
+
 	switch (endpoint ) {
 		case "pdf":
-			return Promise.reject("Not Implemented");
+			return Promise.resolve(process.env.REACT_APP_API_URL! + "/resume.pdf" as Response);
 		case "contact":
 			return Promise.resolve(true as any as Response);
 		case "content":
-			return Promise.resolve(filterImages(content) as Response);
+			return Promise.resolve(await fetchMockContent() as Response);
 	}
 	return Promise.reject("");
 }
 
-const filterImages = (content:any):ContentResponse => {
-	const response = content as ContentResponse;
-	response.portfolio.delivered.forEach(( { imgUrl }, index) => {
+const fetchMockContent = async ():Promise<ContentResponse> => {
+	const fetchResponse = await fetch(process.env.REACT_APP_API_URL! + "/content.json", {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': "*",
+		},
+	});
+	const json = await fetchResponse.json() as ContentResponse;
+
+	json.portfolio.delivered.forEach(( { imgUrl }, index) => {
 		switch (imgUrl ) {
 			case "reciprocity":
-				response.portfolio.delivered[index].imgUrl = reciprocity;
+				json.portfolio.delivered[index].imgUrl = reciprocity;
 				break;
 			case "cityautobahn":
-				response.portfolio.delivered[index].imgUrl = cityautobahn;
+				json.portfolio.delivered[index].imgUrl = cityautobahn;
 				break;
 			case "acc":
-				response.portfolio.delivered[index].imgUrl = acc;
+				json.portfolio.delivered[index].imgUrl = acc;
 				break;
 		}
 	})
 
-	return response;
+	return json;
 }

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Honeypot / should render correctly 1`] = `
+<label
+  className="sc-bdfBQB aHUYv"
+>
+  <input
+    autoComplete="off"
+    name="test-honeypot"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your name here"
+    type="text"
+    value="dummy"
+  />
+</label>
+`;

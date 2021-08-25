@@ -41,7 +41,7 @@ const schema = Yup.object<ContactFormState>({
  * Contact form page!
  */
 export const Contact = () => {
-	const [ submitOk, setSubmitOk ] = useState<boolean|null>(null);
+	const [ submitOk, setSubmitOk ] = useState<boolean | null>(null);
 	return (
 		<Formik<ContactFormState>
 			initialValues={initialValues}
@@ -63,7 +63,8 @@ export const Contact = () => {
 			{() => (
 				<StyledForm>
 					<Blurb>
-						Thanks for your interest! Please fill out the form below to get in touch with me. You can also find my contact information in the downloadable PDF of my resume.
+						Thanks for your interest! Please fill out the form below to get in touch with me. You can also
+						find my contact information in the downloadable PDF of my resume.
 					</Blurb>
 					<LabelledField label="Name">
 						<Input name="name"/>
@@ -75,15 +76,17 @@ export const Contact = () => {
 						<Input name="xQCDEmailCaravan"/>
 					</LabelledField>
 					<LabelledField label="Message">
-						<Textarea name="message" />
+						<Textarea name="message"/>
 					</LabelledField>
 					<Honeypot name="email"/>
 					{submitOk !== null ? (
 						<SubmitMessage okay={submitOk}>
-							{submitOk ? "" : ""}
+							{submitOk ?
+							 "Thank you for your interest! I'll get back to you ASAP." :
+							 "An error occurred while attempting to submit your message. Please refresh the page and try again."}
 						</SubmitMessage>
 					) : null}
-					<ErrorSummary />
+					<ErrorSummary/>
 					<Submit>Submit</Submit>
 				</StyledForm>
 			)}
@@ -107,7 +110,7 @@ const Label = styled.label`
 const LabelText = styled.div`
 	font-size: 24px;
 `;
-const SubmitMessage = styled.div<{okay: boolean}>`
+const SubmitMessage = styled.div<{ okay: boolean }>`
 	text-align: center;
 	color: ${p => p.okay ? "green" : "red"};
 `;

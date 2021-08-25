@@ -6,13 +6,18 @@ import { faEnvelope, faFilePdf } from "@fortawesome/free-regular-svg-icons";
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
+	const pdfHandler = ( event: React.MouseEvent<HTMLAnchorElement, MouseEvent> ) => {
+		event.preventDefault();
+		window.open(process.env.REACT_APP_API_URL! + "/resume.pdf");
+	}
 	return (
 		<Wrap>
 			<Name>Ragav Kumar</Name>
 			<Title>Full Stack Developer</Title>
 			<IconWrap>
-				<StyledLink to="/pdf"><FontAwesomeIcon icon={faFilePdf} /></StyledLink>
-				<StyledLink to="/contact"><FontAwesomeIcon icon={faEnvelope} /></StyledLink>
+				<StyledLink to="/pdf" target="_blank" onClick={pdfHandler}><FontAwesomeIcon
+					icon={faFilePdf}/></StyledLink>
+				<StyledLink to="/contact"><FontAwesomeIcon icon={faEnvelope}/></StyledLink>
 			</IconWrap>
 		</Wrap>
 	);
