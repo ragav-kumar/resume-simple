@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { Contact, ContactFormState } from "./Contact";
 import userEvent from "@testing-library/user-event";
-import * as Api from "../utils/apiFetch.mock";
 import { apiFetch } from "../utils/apiFetch.mock";
 import { mocked } from "ts-jest/utils";
 import clearAllMocks = jest.clearAllMocks;
@@ -50,6 +49,10 @@ const enterDataThenSubmit = ( data: ContactFormState ) => act(() => {
 	userEvent.click(screen.getByRole('button', { name: /submit/i }));
 });
 
+jest.mock("../utils/apiFetch.mock", () => ({
+	apiFetch: jest.fn(() => Promise.resolve(true))
+}));
+
 // Pull the snapshot check outside the describe to allow simple setup and teardown
 it('should render correctly', () => {
 	const tree = renderer
@@ -58,18 +61,12 @@ it('should render correctly', () => {
 	expect(tree).toMatchSnapshot();
 });
 
-describe('<Contact /> when fetch is successful', () => {
-
-	/*jest.mock('../utils/apiFetch.mock', () => ({
-		apiFetch: jest.fn().mockImplementation(() => Promise.resolve(true)),
-	}));*/
+describe('<Contact />', () => {
 
 	beforeEach(() => {
-		// jest.mock('../utils/apiFetch.mock', () => ({ apiFetch: jest.fn() }));
-		const mockFetch = jest.spyOn(Api, 'apiFetch');
 		render(<Contact/>);
 	});
-	afterEach(clearAllMocks);
+	// afterEach(clearAllMocks);
 
 	it('should trigger validation on incomplete input', async () => {
 		enterDataThenSubmit(validationFailData);
@@ -88,20 +85,29 @@ describe('<Contact /> when fetch is successful', () => {
 				...okayData,
 				email: okayData.xQCDEmailCaravan,
 			});
+		});
+	});
+
+	it('should show success message on successful submit', async () => {
+		enterDataThenSubmit(okayData);
+		await waitFor(() => {
+			expect(screen.getAllByText(/Thank you for your interest! I'll get back to you ASAP\./i)).toHaveLength(1);
+		});
+	});
+
+	it('should not submit if honeypot set', async () => {
+		enterDataThenSubmit(honeypotData);
+		await waitFor(() => {
+			expect(mocked(apiFetch)).toBeCalledTimes(0);
 		})
 	});
 
-	/*it('should show success message on successful submit', async () => {
+	it('should show failure message on failed submit', async () => {
+		mocked(apiFetch).mockReturnValue(Promise.resolve(false));
 		enterDataThenSubmit(okayData);
+		await waitFor(() => {
+			expect(screen.getAllByText(/An error occurred/i)).toHaveLength(1);
+		});
 	});
-
-	it('should not submit if honeypot set', () => {
-		enterDataThenSubmit(honeypotData);
-	});*/
 });
 
-/*describe('<Contact /> when fetch is not successful', () => {
-	it('should show failure message on failed submit', () => {
-		enterDataThenSubmit(okayData);
-	});
-});*/
