@@ -3,6 +3,7 @@
 exports[`<Input /> should change style on error 1`] = `
 <input
   className="sc-bdfBQB dlwpfJ"
+  data-testid="test-input"
   name="test-input"
   value="dummy"
 />
@@ -11,6 +12,7 @@ exports[`<Input /> should change style on error 1`] = `
 exports[`<Input /> should render correctly 1`] = `
 <input
   className="sc-bdfBQB jXLNkU"
+  data-testid="test-input"
   name="test-input"
   value="dummy"
 />

@@ -24,6 +24,7 @@ export const Input = ( props: InputProps ) => {
 			{...field}
 			{...props}
 			isError={isError}
+			data-testid={props.name}
 		/>
 	);
 }
@@ -38,6 +39,7 @@ export const Textarea = ( props: TextareaProps ) => {
 			{...field}
 			{...props}
 			isError={isError}
+			data-testid={props.name}
 		/>
 	);
 }

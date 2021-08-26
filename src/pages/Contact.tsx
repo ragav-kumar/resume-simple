@@ -1,4 +1,4 @@
-import { Form, Formik } from "formik";
+import { Form, Formik, FormikHelpers } from "formik";
 import React, { useState } from "react";
 import * as Yup from 'yup';
 import styled from "styled-components";
@@ -9,7 +9,7 @@ import { apiFetch } from "../utils/apiFetch.mock";
 import { ErrorSummary } from "../components/ErrorSummary";
 
 // Using hashed
-interface ContactFormState {
+export interface ContactFormState {
 	// Honeypot name
 	name: string;
 	phone: string;
@@ -42,22 +42,25 @@ const schema = Yup.object<ContactFormState>({
  */
 export const Contact = () => {
 	const [ submitOk, setSubmitOk ] = useState<boolean | null>(null);
+
+	const handleSubmit = async(values:ContactFormState, form:FormikHelpers<ContactFormState>) => {
+		// check honeypot. Ignore if honeypot set.
+		if ( !values.email || values.email === '' ) {
+			// Honeypot value is not set, do submission
+			const request: ContactRequest = {
+				...values,
+				email: values.xQCDEmailCaravan,
+			}
+			const response = await apiFetch<ContactRequest, ContactResponse>("contact", request);
+			setSubmitOk(response);
+		}
+		form.setSubmitting(false);
+	}
+
 	return (
 		<Formik<ContactFormState>
 			initialValues={initialValues}
-			onSubmit={async ( values, form ) => {
-				// check honeypot. Ignore if honeypot set.
-				if ( values.email ) {
-					// Honeypot value is not set, do submission
-					const request: ContactRequest = {
-						...values,
-						email: values.xQCDEmailCaravan,
-					}
-					const response = await apiFetch<ContactRequest, ContactResponse>("contact", request);
-					setSubmitOk(response);
-				}
-				form.setSubmitting(false);
-			}}
+			onSubmit={handleSubmit}
 			validationSchema={schema}
 		>
 			{() => (
@@ -78,7 +81,7 @@ export const Contact = () => {
 					<LabelledField label="Message">
 						<Textarea name="message"/>
 					</LabelledField>
-					<Honeypot name="email"/>
+					<Honeypot name="email" label="E-mail"/>
 					{submitOk !== null ? (
 						<SubmitMessage okay={submitOk}>
 							{submitOk ?
@@ -87,7 +90,7 @@ export const Contact = () => {
 						</SubmitMessage>
 					) : null}
 					<ErrorSummary/>
-					<Submit>Submit</Submit>
+					<Submit name="submit" type="submit">Submit</Submit>
 				</StyledForm>
 			)}
 		</Formik>

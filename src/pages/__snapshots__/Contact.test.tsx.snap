@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<form
+  action="#"
+  className="sc-eCstlR iBjlqv"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <p
+    className="sc-jSgvzq bPKcny"
+  >
+    Thanks for your interest! Please fill out the form below to get in touch with me. You can also find my contact information in the downloadable PDF of my resume.
+  </p>
+  <label
+    className="sc-gKseQn hXnWn"
+  >
+    <div
+      className="sc-iBPTik fYVppt"
+    >
+      Name
+    </div>
+    <input
+      className="sc-gsTEea cPMJOM"
+      data-testid="name"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value=""
+    />
+  </label>
+  <label
+    className="sc-gKseQn hXnWn"
+  >
+    <div
+      className="sc-iBPTik fYVppt"
+    >
+      Phone
+    </div>
+    <input
+      className="sc-gsTEea cPMJOM"
+      data-testid="phone"
+      name="phone"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value=""
+    />
+  </label>
+  <label
+    className="sc-gKseQn hXnWn"
+  >
+    <div
+      className="sc-iBPTik fYVppt"
+    >
+      Email
+    </div>
+    <input
+      className="sc-gsTEea cPMJOM"
+      data-testid="xQCDEmailCaravan"
+      name="xQCDEmailCaravan"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value=""
+    />
+  </label>
+  <label
+    className="sc-gKseQn hXnWn"
+  >
+    <div
+      className="sc-iBPTik fYVppt"
+    >
+      Message
+    </div>
+    <textarea
+      className="sc-dlfnuX dSKtwr"
+      data-testid="message"
+      name="message"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value=""
+    />
+  </label>
+  <label
+    className="sc-bdfBQB aHUYv"
+  >
+    E-mail
+    <input
+      autoComplete="off"
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Your name here"
+      type="text"
+      value=""
+    />
+  </label>
+  <div
+    className="sc-hKgJUU kcWwiC"
+  />
+  <button
+    className="sc-pGacB ciavHz"
+    name="submit"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

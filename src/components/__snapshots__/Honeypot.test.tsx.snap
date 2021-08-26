@@ -4,6 +4,7 @@ exports[`<Honeypot / should render correctly 1`] = `
 <label
   className="sc-bdfBQB aHUYv"
 >
+  test-honeypot
   <input
     autoComplete="off"
     name="test-honeypot"

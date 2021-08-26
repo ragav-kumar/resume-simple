@@ -4,15 +4,17 @@ import { useField } from "formik";
 
 interface HoneypotProps {
 	name: string;
+	label?: string;
 }
 
 /**
  * Fairly simple form honeypot to filter out the dumber spammers
  */
-export const Honeypot = ( { name }: HoneypotProps ) => {
+export const Honeypot = ( { name, label }: HoneypotProps ) => {
 	const [ field ] = useField<string>(name);
 	return (
 		<Label>
+			{label || name}
 			<input
 				{...field}
 				autoComplete="off"

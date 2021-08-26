@@ -19,7 +19,7 @@ export const ErrorSummary = () => {
 	}
 	return (
 		<Wrap>
-			{getMessages(errors).map(msg => <div>{msg}</div>)}
+			{getMessages(errors).map((msg, index) => <div key={index}>{msg}</div>)}
 		</Wrap>
 	);
 }
